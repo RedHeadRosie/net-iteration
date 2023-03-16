@@ -128,7 +128,25 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            int counterAllNumbers = 0;
+            int counterEvens = 0;
+            var onlyEvensList = new List<int>();
+
+            while (counterAllNumbers < numbers.Count)
+            {
+                int numberInList = numbers[counterAllNumbers];
+                float remainder = counterAllNumbers % 2;
+
+                if (remainder == 0)
+                {
+                    onlyEvensList.Add(numberInList);
+                    counterEvens++;
+                }
+                counterAllNumbers++;
+            }
+            return onlyEvensList;
+            
+            //throw new System.NotImplementedException();
         }
 
 
@@ -157,7 +175,23 @@ namespace DotnetIteration
         // 
         public static bool EveryoneIsOdd(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            bool allOdd = true;
+            int counter = 0;
+
+            while (counter < numbers.Count)
+            {
+                int isItOdd = numbers[counter];
+                float remainder = isItOdd % 2;
+                if (remainder == 0)
+                {
+                    allOdd = false;
+                }
+                counter++;
+            }
+
+            return allOdd;
+            
+            //throw new System.NotImplementedException();
         }
 
 
@@ -168,7 +202,26 @@ namespace DotnetIteration
         // 
         public static string FindTheNeedle(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+            string needleString = "";
+            int counter = 0;
+            string input = sentences[counter];
+            string needle = "needle";
+
+            while (counter < sentences.Count)
+            {
+                input = sentences[counter];
+                bool foundIt = input.Contains(needle);
+
+                if(foundIt == true)
+                {
+                    needleString= sentences[counter];
+                }
+                counter++;
+            }
+
+            return needleString;
+            
+            //throw new System.NotImplementedException();
         }
 
 
