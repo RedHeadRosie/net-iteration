@@ -32,7 +32,19 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
+
+            int counter = 0;
+
+            while (counter < words.Count)
+            {
+                string lowerCaseString = words[counter];
+                string upperCaseString = lowerCaseString.ToUpper();
+                words[counter] = upperCaseString;
+                counter++;
+            }
+            return words;
+
+            //throw new System.NotImplementedException();
         }
 
 
@@ -43,7 +55,18 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            int counter = 0;
+
+            while (counter < numbers.Count)
+            {
+                int number = numbers[counter];
+                int doubledNumber = number * 2;
+                numbers[counter] = doubledNumber;
+                counter++;
+            }
+            return numbers;
+
+            //throw new System.NotImplementedException();
         }
 
 
@@ -55,7 +78,18 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> words)
         {
-            throw new System.NotImplementedException();
+            int counter = 0;
+
+            while (counter < words.Count)
+            {
+                string wordToChange = words[counter];
+                string changedWord = wordToChange + " is at index " + counter;
+                words[counter] = changedWord;
+                counter++;
+            }
+            return words;
+
+            //throw new System.NotImplementedException();
         }
 
 
@@ -65,7 +99,25 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            int counterAllNumbers = 0;
+            int counterEvens = 0;
+            var onlyEvensList = new List<int>();
+
+            while (counterAllNumbers < numbers.Count)
+            {
+                int isItEven = numbers[counterAllNumbers];
+                float remainder = isItEven % 2;
+
+                if (remainder == 0)
+                {
+                    onlyEvensList.Add(isItEven);
+                    counterEvens++;
+                }
+                counterAllNumbers++;
+            }
+            return onlyEvensList;
+
+            //throw new System.NotImplementedException();
         }
 
 
