@@ -145,7 +145,7 @@ namespace DotnetIteration
                 counterAllNumbers++;
             }
             return onlyEvensList;
-            
+
             //throw new System.NotImplementedException();
         }
 
@@ -163,9 +163,20 @@ namespace DotnetIteration
         //   Score: 99
         // }
         // 
+
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> movies, int yearToMatch)
         {
-            throw new System.NotImplementedException();
+            var onlyTheBest = new List<string>();
+
+            foreach (Movie movie in movies)
+            {
+                if (movie.Year == yearToMatch && movie.Score > 90)
+                {
+                    onlyTheBest.Add(movie.Name);
+                }
+            }
+
+            return onlyTheBest;
         }
 
 
@@ -190,7 +201,7 @@ namespace DotnetIteration
             }
 
             return allOdd;
-            
+
             //throw new System.NotImplementedException();
         }
 
@@ -212,15 +223,15 @@ namespace DotnetIteration
                 input = sentences[counter];
                 bool foundIt = input.Contains(needle);
 
-                if(foundIt == true)
+                if (foundIt == true)
                 {
-                    needleString= sentences[counter];
+                    needleString = sentences[counter];
                 }
                 counter++;
             }
 
             return needleString;
-            
+
             //throw new System.NotImplementedException();
         }
 
@@ -232,7 +243,26 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+            int winningIndex = 0;
+            int counter = 0;
+            string input = sentences[counter];
+            string needle = "needle";
+
+            while (counter < sentences.Count)
+            {
+                input = sentences[counter];
+                bool foundIt = input.Contains(needle);
+
+                if (foundIt == true)
+                {
+                    winningIndex = counter;
+                }
+                counter++;
+            }
+
+            return winningIndex;
+
+            //throw new System.NotImplementedException();
         }
 
 
@@ -243,7 +273,26 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> words)
         {
-            throw new System.NotImplementedException();
+            int counter = 0;
+            string input = words[counter];
+            bool foundIt = false;
+            //string needle = "needle";
+
+            while (counter < words.Count)
+            {
+                input = words[counter];
+
+                if (input.Length == 4)
+                {
+                    foundIt = true;
+                }
+                counter++;
+            }
+
+            return foundIt;
+
+
+            //throw new System.NotImplementedException();
         }
     }
 }
